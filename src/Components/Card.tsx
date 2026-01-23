@@ -5,6 +5,7 @@ import CardActions from '@mui/material/CardActions'
 import jazminImage from '../assets/jazmin_4.jpg'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 
 interface ProductCardProps {
     image?: string
@@ -14,7 +15,7 @@ interface ProductCardProps {
 
 const ProductCard = ({image, title, price}: ProductCardProps) => {
     return (
-        <Card>
+        <Card sx={{ backgroundColor: '#F7EFDC' }}>
             <CardMedia
                 component='img'
                 image={image || jazminImage}
@@ -25,11 +26,13 @@ const ProductCard = ({image, title, price}: ProductCardProps) => {
                     {title || 'Jazmín de la selva'}
                 </Typography>
                 <Typography variant='subtitle1' align='left'>
-                    ${price || 30}
+                    ${price || 3000}
                 </Typography>
             </CardContent>
             <CardActions sx={{justifyContent: 'center'}}>
-                <Button variant='outlined' color='success'>Comprar!!!</Button>
+                <Button variant='contained' endIcon={<ShoppingCartIcon />} sx={{backgroundColor: '#94A187', color: '#F7EFDC'}}>
+                Agregar
+                </Button>
             </CardActions>
         </Card>
     )
