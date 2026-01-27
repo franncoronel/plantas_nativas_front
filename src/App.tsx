@@ -4,7 +4,6 @@ import theme from './theme.ts'
 import './App.css'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
-import ProductCard from './Components/Card.tsx'
 
 function App() {
 
