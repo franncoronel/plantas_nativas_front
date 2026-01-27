@@ -8,9 +8,9 @@ import Button from '@mui/material/Button'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 
 interface ProductCardProps {
-    image?: string
-    title?: string
-    price?: number
+    image: string
+    title: string
+    price: number
 }
 
 const ProductCard = ({image, title, price}: ProductCardProps) => {
