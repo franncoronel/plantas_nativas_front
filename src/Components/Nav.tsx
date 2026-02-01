@@ -8,33 +8,36 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import AccountBoxOutlinedIcon from '@mui/icons-material/AccountBoxOutlined'
 import AccountBoxIcon from '@mui/icons-material/AccountBox'
-import { NavLink } from "react-router"
+import { NavLink, useLocation } from "react-router"
+import { useState } from 'react'
+import { PATHS } from '../Routing/paths'
 
 
 const Nav = () => {
+    //TODO: Usar estado o investigar NavLink para renderizar íconos filled en vez de outlined cuando está activo el botón correspondiente
+    const [active, setActive] = useState<Boolean>()
+
     return (
         <BottomNavigation>
             <BottomNavigationAction
                 component={NavLink}
-                to="/"
+                to={PATHS.HOME}
                 label="Inicio"
                 icon={<HomeOutlinedIcon />}
             />
             <BottomNavigationAction
-                component={NavLink}
-                to="/buscar"
                 label="Buscar"
                 icon={<SearchOutlinedIcon />}
             />
             <BottomNavigationAction
                 component={NavLink}
-                to="/carrito"
+                to={PATHS.CART}
                 label="Carrito"
                 icon={<ShoppingCartOutlinedIcon />}
             />
             <BottomNavigationAction
                 component={NavLink}
-                to="/ingresar"
+                to={PATHS.LOGIN}
                 label="Ingresar"
                 icon={<AccountBoxOutlinedIcon />}
             />
