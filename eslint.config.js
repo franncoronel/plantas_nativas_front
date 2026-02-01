@@ -19,5 +19,14 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    rules: {
+      'semi': ['error', 'never'],
+      'no-restricted-imports': [
+        'error',
+        {
+          "patterns": [{ "regex": "^@mui/[^/]+$" }]
+        }
+      ]
+    },
   },
 ])
