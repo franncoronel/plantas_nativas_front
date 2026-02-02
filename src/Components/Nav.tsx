@@ -18,7 +18,7 @@ const Nav = () => {
     const [active, setActive] = useState<boolean>()
 
     return (
-        <BottomNavigation>
+        <BottomNavigation sx={ {position: 'fixed', bottom: 0, width: '100%'} }>
             <BottomNavigationAction
                 component={NavLink}
                 to={PATHS.HOME}
