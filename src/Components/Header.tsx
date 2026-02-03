@@ -16,7 +16,7 @@ import DarkModeIcon from '@mui/icons-material/DarkMode'
 export const HeaderApp = () => {
 
     return (
-        <AppBar position="fixed">
+        <AppBar position='fixed'>
             <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
                 {/*Nombre de la App*/}
                 <Typography align='left'>Plantitas </Typography>
