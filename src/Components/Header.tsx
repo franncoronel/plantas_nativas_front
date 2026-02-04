@@ -1,3 +1,4 @@
+import { useState } from 'react'
 //Components
 import AppBar from '@mui/material/AppBar'
 import MenuItem from '@mui/material/MenuItem'
@@ -15,6 +16,19 @@ import DarkModeIcon from '@mui/icons-material/DarkMode'
 
 export const HeaderApp = () => {
 
+    {/*Handleo del menu clickeable*/ }
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+
+    const open = Boolean(anchorEl)
+
+    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+        setAnchorEl(event.currentTarget)
+    }
+
+    const handleClose = () => {
+        setAnchorEl(null)
+    }
+
     return (
         <AppBar position='fixed'>
             <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -29,9 +43,21 @@ export const HeaderApp = () => {
                     </IconButton>
 
                     {/*Menu hamburguesa para navegación*/}
-                    <IconButton>
+                    <IconButton
+                        aria-label='Menu'
+                        aria-haspopup='true'
+                        onClick={handleClick}
+                    >
                         <MenuIcon />
                     </IconButton>
+                    <Menu
+                        anchorEl={anchorEl}
+                        open={open}
+                        onClose={handleClose}
+                    >
+                        <MenuItem>Test 1</MenuItem>
+                        <MenuItem>Test 2</MenuItem>
+                    </Menu>
                 </Box>
             </Toolbar>
         </AppBar>
