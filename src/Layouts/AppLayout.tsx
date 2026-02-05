@@ -3,10 +3,10 @@ import Nav from "../Components/Nav"
 import { Outlet } from "react-router"
 
 export const AppLayout = () => {
-    return(
-        <Box>
-            <Outlet />
-            <Nav />
-        </Box>
-    )
+  return (
+    <Box>
+      <Outlet />
+      <Nav />
+    </Box>
+  )
 }
