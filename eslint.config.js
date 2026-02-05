@@ -20,13 +20,12 @@ export default defineConfig([
       globals: globals.browser,
     },
     rules: {
-      'semi': ['error', 'never'],
-      'no-restricted-imports': [
-        'error',
+      "no-restricted-imports": [
+        "error",
         {
-          "patterns": [{ "regex": "^@mui/[^/]+$" }]
-        }
-      ]
+          patterns: [{ regex: "^@mui/[^/]+$" }],
+        },
+      ],
     },
   },
   eslintConfigPrettier
