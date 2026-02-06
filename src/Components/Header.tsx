@@ -20,7 +20,7 @@ import DarkModeIcon from '@mui/icons-material/DarkMode'
 import CloseIcon from '@mui/icons-material/Close'
 
 
-export const HeaderApp = () => {
+export const AppHeader = () => {
 
     {/*Opcion 1: Handleo del menu clickeable*/ }
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
