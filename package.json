@@ -39,6 +39,6 @@
     "vite": "^7.2.4"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "*.{ts,tsx}": "prettier --write --ignore-unknown"
   }
 }
