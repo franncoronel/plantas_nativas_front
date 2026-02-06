@@ -12,8 +12,6 @@ import { NavLink, useLocation } from "react-router"
 import { useState } from "react"
 import { PATHS } from "../Routing/paths"
 
-var stringFeoTest = "HOLA"
-
 const Nav = () => {
   //TODO: Usar estado o investigar NavLink para renderizar íconos filled en vez de outlined cuando está activo el botón correspondiente
   const [active, setActive] = useState<Boolean>()
