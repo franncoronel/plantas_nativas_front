@@ -22,18 +22,6 @@ import CloseIcon from '@mui/icons-material/Close'
 
 export const AppHeader = () => {
 
-    {/*Opcion 1: Handleo del menu clickeable*/ }
-    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-
-    const isOpen = Boolean(anchorEl)
-
-    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorEl(event.currentTarget)
-    }
-
-    const handleClose = () => {
-        setAnchorEl(null)
-    }
 
     {/*Opcion 2: Handleo del menu clickeable*/ }
     const [open, setOpen] = useState(false)
@@ -42,7 +30,7 @@ export const AppHeader = () => {
         setOpen(true)
     }
 
-    const handleClose2 = () => {
+    const handleClose = () => {
         setOpen(false)
     }
 
@@ -59,30 +47,7 @@ export const AppHeader = () => {
                         <DarkModeIcon />
                     </IconButton>
 
-                    {/*Opcion 1: Menu hamburguesa para navegación*/}
-                    <IconButton
-                        aria-label='Menu'
-                        aria-haspopup='true'
-                        onClick={handleClick}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Menu
-                        anchorEl={anchorEl}
-                        open={isOpen}
-                        onClose={handleClose}
-                    >
-                        <MenuItem>Plantas</MenuItem>
-                        <MenuItem>Macetas</MenuItem>
-                        <MenuItem>Sustratos</MenuItem>
-                        <MenuItem>Contacto</MenuItem>
-                        <MenuItem>FAQ</MenuItem>
-                    </Menu>
-                </Box>
-
-
-                {/*Opcion 2: Menu hamburguesa con modal full-screen*/}
-                <Box>
+                    {/*Menu hamburguesa con modal full-screen*/}
                     {/*Icono del menu*/}
                     <IconButton
                         aria-label='Menu2'
@@ -96,21 +61,20 @@ export const AppHeader = () => {
                     <Dialog
                         open={open}
                         fullScreen
-                        onClose={handleClose2}
+                        onClose={handleClose}
                     >
                         {/*Boton para cerrar*/}
                         <Box sx={{ position: 'absolute', margin: 1, padding: 1 }}>
                             <IconButton
                                 edge="start"
                                 color="inherit"
-                                onClick={handleClose2}
+                                onClick={handleClose}
                                 aria-label="close"
-
                             >
                                 <CloseIcon />
                             </IconButton>
 
-                            <List sx={{ position: 'relative'}}>                      {/*Lista con todos los links para navegar*/}
+                            <List sx={{ position: 'relative' }}>                      {/*Lista con todos los links para navegar*/}
                                 <ListItemButton>
                                     <ListItemText primary="Plantas" />
                                 </ListItemButton>
@@ -123,17 +87,10 @@ export const AppHeader = () => {
                                 <ListItemButton>
                                     <ListItemText primary="Contacto" />
                                 </ListItemButton>
-                                <ListItemButton>
-                                    <ListItemText primary="FAQ" />
-                                </ListItemButton>
                             </List>
                         </Box>
-
-
-
                     </Dialog>
                 </Box>
-
             </Toolbar>
         </AppBar>
     )
