@@ -1,58 +1,60 @@
 import { useState } from 'react'
 //Components
 import AppBar from '@mui/material/AppBar'
-import MenuItem from '@mui/material/MenuItem'
-import Menu from '@mui/material/Menu'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import Toolbar from '@mui/material/Toolbar'
 import Dialog from '@mui/material/Dialog'
 import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemText from '@mui/material/ListItemText'
+import ListItemIcon from '@mui/material/ListItemIcon'
+import DialogActions from '@mui/material/DialogActions'
+import { AppThemeSwitch } from './AppThemeSwitch'
 
 //Icons
 import MenuIcon from '@mui/icons-material/Menu'
 import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import CloseIcon from '@mui/icons-material/Close'
+import LocalFloristIcon from '@mui/icons-material/LocalFlorist'
+import { GiFlowerPot } from "react-icons/gi"
+import { GiPlantRoots } from "react-icons/gi"
+import { MdContactSupport } from "react-icons/md"
 
 
 export const AppHeader = () => {
-
-
-    {/*Opcion 2: Handleo del menu clickeable*/ }
+    {/*Handleo del menu hamburguesa*/ }
     const [open, setOpen] = useState(false)
 
-    const handleClickOpen = () => {
-        setOpen(true)
+    const handleOpenMenu = () => setOpen(true)
+
+    const handleCloseMenu = () => setOpen(false)
+
+    {/*Handleo del switch dark/light mode*/}
+    const handleThemeChange = (isDark : boolean) => {
+        //PENDING: LOGICA PARA EL CAMBIO DE THEME
+        console.log('PENDING' + isDark)
     }
 
-    const handleClose = () => {
-        setOpen(false)
-    }
 
     return (
         <AppBar position='fixed'>
             <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
                 {/*Nombre de la App*/}
-                <Typography align='left'>Plantitas </Typography>
+                <Typography align='left'>Plantitas</Typography>
 
                 <Box>
                     {/*Switch para el light/dark mode*/}
-                    <IconButton>
-                        <WbSunnyOutlinedIcon />
-                        <DarkModeIcon />
-                    </IconButton>
+                    <AppThemeSwitch onChange={handleThemeChange}/>
 
                     {/*Menu hamburguesa con modal full-screen*/}
                     {/*Icono del menu*/}
                     <IconButton
-                        aria-label='Menu2'
+                        aria-label='Menu'
                         aria-haspopup='true'
-                        onClick={handleClickOpen}
+                        onClick={handleOpenMenu}
                     >
                         <MenuIcon />
                     </IconButton>
@@ -61,34 +63,36 @@ export const AppHeader = () => {
                     <Dialog
                         open={open}
                         fullScreen
-                        onClose={handleClose}
+                        onClose={handleCloseMenu}
                     >
                         {/*Boton para cerrar*/}
-                        <Box sx={{ position: 'absolute', margin: 1, padding: 1 }}>
-                            <IconButton
-                                edge="start"
-                                color="inherit"
-                                onClick={handleClose}
-                                aria-label="close"
-                            >
+                        <DialogActions sx={{ justifyContent: 'flex-start', p: 1, pb: 0 }}>
+                            <IconButton onClick={handleCloseMenu} aria-label="close">
                                 <CloseIcon />
                             </IconButton>
+                        </DialogActions>
 
-                            <List sx={{ position: 'relative' }}>                      {/*Lista con todos los links para navegar*/}
-                                <ListItemButton>
-                                    <ListItemText primary="Plantas" />
-                                </ListItemButton>
-                                <ListItemButton>
-                                    <ListItemText primary="Macetas" />
-                                </ListItemButton>
-                                <ListItemButton>
-                                    <ListItemText primary="Sustratos" />
-                                </ListItemButton>
-                                <ListItemButton>
-                                    <ListItemText primary="Contacto" />
-                                </ListItemButton>
-                            </List>
-                        </Box>
+                        <List sx={{ pt: 0, pl: 1 }}>                      {/*Lista con links para navegar*/}
+                            <ListItemButton>
+                                <ListItemIcon sx={{ fontSize: 24 }}> <LocalFloristIcon /> </ListItemIcon>
+                                <ListItemText primary="Plantas" />
+                            </ListItemButton>
+
+                            <ListItemButton>
+                                <ListItemIcon sx={{ fontSize: 24 }}> <GiFlowerPot /> </ListItemIcon>
+                                <ListItemText primary="Macetas" />
+                            </ListItemButton>
+
+                            <ListItemButton>
+                                <ListItemIcon sx={{ fontSize: 24 }}> <GiPlantRoots /> </ListItemIcon>
+                                <ListItemText primary="Sustratos" />
+                            </ListItemButton>
+
+                            <ListItemButton>
+                                <ListItemIcon sx={{ fontSize: 24 }}> <MdContactSupport /> </ListItemIcon>
+                                <ListItemText primary="Contacto" />
+                            </ListItemButton>
+                        </List>
                     </Dialog>
                 </Box>
             </Toolbar>
