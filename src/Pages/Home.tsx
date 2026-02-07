@@ -1,9 +1,15 @@
 import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+import '@fontsource/nunito/400.css'
+import '@fontsource/nunito/600.css'
+import '@fontsource/nunito/700.css'
 
 export const Home = () => {
     return (
-        <Box>
-            Este es el home de nuestra app!
+        <Box sx= {{mt: '1rem'}}>
+            <Typography sx={{ fontFamily: '"Nunito", system-ui, sans-serif', fontStyle: 'italic', textAlign: 'center' }}>
+                Plantas nativas de Buenos Aires para tu hogar
+            </Typography>
         </Box>
     )
 }
