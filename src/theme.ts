@@ -1,7 +1,18 @@
+import { boxClasses } from "@mui/material"
 import { createTheme } from "@mui/material/styles"
 
 const theme = createTheme({
     components: {
+        MuiCssBaseline:{
+            styleOverrides: {
+                body: {
+                    margin: 0,
+                    padding: 0,
+                    boxSizing: 'border-box',
+                },
+            }
+        },
+
         MuiButton: {
             defaultProps: {
 

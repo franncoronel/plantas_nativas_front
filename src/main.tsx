@@ -6,10 +6,13 @@ import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
 import { BrowserRouter } from 'react-router'
+import CssBaseline from '@mui/material/CssBaseline'
+
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
+      <CssBaseline />
       <App />
     </BrowserRouter>
   </StrictMode>,
