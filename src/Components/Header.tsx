@@ -15,8 +15,6 @@ import { AppThemeSwitch } from './AppThemeSwitch'
 
 //Icons
 import MenuIcon from '@mui/icons-material/Menu'
-import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined'
-import DarkModeIcon from '@mui/icons-material/DarkMode'
 import CloseIcon from '@mui/icons-material/Close'
 import LocalFloristIcon from '@mui/icons-material/LocalFlorist'
 import { GiFlowerPot } from "react-icons/gi"
