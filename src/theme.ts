@@ -3,27 +3,25 @@ import { createTheme } from "@mui/material/styles"
 const theme = createTheme({
     components: {
         MuiButton: {
-            defaultProps: {
-
-            }
-        }
+            defaultProps: {},
+        },
     },
     colorSchemes: {
         dark: {
             palette: {
                 primary: {
-                    main: '#ff0000'
-                }
-            }
+                    main: "#ff0000",
+                },
+            },
         },
         light: {
             palette: {
                 primary: {
-                    main: '#FFFFFF'
-                }
-            }
-        }
-    }
+                    main: "#FFFFFF",
+                },
+            },
+        },
+    },
 })
 
 export default theme

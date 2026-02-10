@@ -1,9 +1,9 @@
-import { Routes, Route } from 'react-router'
-import { PATHS } from './paths'
-import { AppLayout } from '../Layouts/AppLayout'
-import { AuthLayout } from '../Layouts/AuthLayout'
-import { Home } from '../Pages/Home'
-import { Cart } from '../Pages/Cart'
+import { Routes, Route } from "react-router"
+import { PATHS } from "./paths"
+import { AppLayout } from "../Layouts/AppLayout"
+import { AuthLayout } from "../Layouts/AuthLayout"
+import { Home } from "../Pages/Home"
+import { Cart } from "../Pages/Cart"
 
 export const AppRoutes = () => {
     return (
