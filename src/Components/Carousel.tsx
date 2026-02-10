@@ -9,9 +9,9 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft'
 
 //Images
-import Banner1 from '../Assets/banner_1.png'
-import Banner2 from '../Assets/banner_2.png'
-import Banner3 from '../Assets/banner_3.png'
+import Banner2 from '../assets/banner_2.png'
+import Banner1 from '../assets/banner_1.png'
+import Banner3 from '../assets/banner_3.png'
 
 const slides = [
     { label: 'Banner 1', src: Banner1 },
