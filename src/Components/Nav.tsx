@@ -13,10 +13,10 @@ import { PATHS } from "../Routing/paths"
 
 const Nav = () => {
     //TODO: Usar estado o investigar NavLink para renderizar íconos filled en vez de outlined cuando está activo el botón correspondiente
-    //TODO: const [active, setActive] = useState<Boolean>()
+    //TODO: const [active, setActive] = useState<boolean>()
 
     return (
-        <BottomNavigation>
+        <BottomNavigation sx={{ position: "fixed", bottom: 0, width: "100%" }}>
             <BottomNavigationAction
                 component={NavLink}
                 to={PATHS.HOME}
