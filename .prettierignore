@@ -1,0 +1,11 @@
+# Ignore artifacts:
+build
+coverage
+
+.husky/*
+eslint.config.js
+package-lock.json
+package.json
+tsconfig.app.json
+vite.config.ts
+README.md

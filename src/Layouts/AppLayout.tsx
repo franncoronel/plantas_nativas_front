@@ -1,15 +1,14 @@
 import Box from "@mui/material/Box"
 import Nav from "../Components/Nav"
-import { AppHeader } from '../Components/Header'
+import { AppHeader } from "../Components/Header"
 import { Outlet } from "react-router"
-import Toolbar from '@mui/material/Toolbar'
-
+import Toolbar from "@mui/material/Toolbar"
 
 export const AppLayout = () => {
-    return(
+    return (
         <Box>
             <AppHeader />
-            <Toolbar/>      {/*Spacer para que el contenido arranque post Header */}
+            <Toolbar /> {/*Spacer para que el contenido arranque post Header */}
             <Outlet />
             <Nav />
         </Box>
