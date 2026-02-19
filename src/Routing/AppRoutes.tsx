@@ -4,6 +4,7 @@ import { AppLayout } from "../Layouts/AppLayout"
 import { AuthLayout } from "../Layouts/AuthLayout"
 import { Home } from "../Pages/Home"
 import { Cart } from "../Pages/Cart"
+import { Gallery } from "@/Pages/Gallery"
 
 export const AppRoutes = () => {
     return (
@@ -16,6 +17,7 @@ export const AppRoutes = () => {
             <Route path={PATHS.HOME} element={<AppLayout />}>
                 <Route index element={<Home />} />
                 <Route path={PATHS.CART} element={<Cart />} />
+                <Route path={PATHS.GALLERY} element={<Gallery />} />
             </Route>
         </Routes>
     )

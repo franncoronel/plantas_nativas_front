@@ -3,4 +3,5 @@ export const PATHS = {
     LOGIN: "/ingresar",
     SIGNUP: "/registrarse",
     CART: "/carrito",
+    GALLERY: "/gallery"
 }
