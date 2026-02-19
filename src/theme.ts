@@ -4,6 +4,11 @@ const theme = createTheme({
     components: {
         MuiButton: {
             defaultProps: {},
+            styleOverrides: {
+                root: {
+                    color: "black",
+                },
+            },
         },
     },
     colorSchemes: {
