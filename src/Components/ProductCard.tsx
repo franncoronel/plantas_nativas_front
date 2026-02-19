@@ -1,11 +1,11 @@
 import Card from "@mui/material/Card"
 import CardMedia from "@mui/material/CardMedia"
 import CardContent from "@mui/material/CardContent"
-import CardActions from "@mui/material/CardActions"
 import jazminImage from "../assets/jazmin_4.jpg"
 import Typography from "@mui/material/Typography"
 import Button from "@mui/material/Button"
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"
+import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined'
+import Box from "@mui/material/Box"
 
 interface ProductCardProps {
     image?: string
@@ -20,24 +20,21 @@ const ProductCard = ({ image, title, price }: ProductCardProps) => {
                 component="img"
                 image={image || jazminImage}
                 title={title || "Jazmín de la selva"}
+                sx={{ height: 120, objectFit: "cover" }}
             />
             <CardContent>
-                <Typography variant="h6" align="left">
+                <Typography variant="subtitle2" align="left">
                     {title || "Jazmín de la selva"}
                 </Typography>
-                <Typography variant="subtitle1" align="left">
+                <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mt: 1 }}>
+                <Typography variant="h6" align="left">
                     ${price || 3000}
                 </Typography>
-            </CardContent>
-            <CardActions sx={{ justifyContent: "center" }}>
-                <Button
-                    variant="contained"
-                    endIcon={<ShoppingCartIcon />}
-                    sx={{ backgroundColor: "#94A187", color: "#F7EFDC" }}
-                >
-                    Agregar
+                <Button variant="outlined" size="small" disableElevation sx={{ minWidth: 0, px: 1, backgroundColor: "#F7EFDC", color: "black", borderColor: "black", borderRadius: "20px"}}>
+                    <AddShoppingCartOutlinedIcon fontSize="small" />
                 </Button>
-            </CardActions>
+                </Box>
+            </CardContent>
         </Card>
     )
 }
