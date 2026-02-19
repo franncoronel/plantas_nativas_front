@@ -7,10 +7,8 @@ export const Gallery = () => {
     return(
         <Container>
             <Grid container spacing={2}>
-                <Grid size={6}>
+                <Grid container size={12} justifyContent="space-between">
                     <Button color="warning" variant="outlined">Filtrar</Button>
-                </Grid>
-                <Grid size={6}>
                     <Button color="warning" variant="outlined">Ordenar</Button>
                 </Grid>
                 <Grid size={6}>
