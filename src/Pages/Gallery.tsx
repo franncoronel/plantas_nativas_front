@@ -11,7 +11,7 @@ export const Gallery = () => {
             <Grid container spacing={2}>
                 <Grid container size={12} justifyContent="space-between">
                     <Button variant="text" startIcon={<FilterAltOutlinedIcon />}>Filtrar</Button>
-                    <Button variant="text" startIcon={<SortOutlinedIcon />}>Ordenar</Button> {/* Supongo que el tema del color habría que verlo con el theme */ }
+                    <Button variant="text" startIcon={<SortOutlinedIcon />}>Ordenar</Button>
                 </Grid>
                 <Grid container size={12} spacing={2} >
                     <Grid size={6}><ProductCard /></Grid>
