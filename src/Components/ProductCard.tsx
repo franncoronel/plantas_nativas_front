@@ -30,7 +30,7 @@ const ProductCard = ({ image, title, price }: ProductCardProps) => {
                 <Typography variant="h6" align="left">
                     ${price || 3000}
                 </Typography>
-                <Button variant="outlined" size="small" disableElevation sx={{ minWidth: 0, px: 1, backgroundColor: "#F7EFDC", color: "black", borderColor: "black", borderRadius: "20px"}}>
+                <Button variant="outlined" size="small" disableElevation sx={{ minWidth: 0, px: 1, backgroundColor: "#F7EFDC", borderColor: "black", borderRadius: "20px"}}>
                     <AddShoppingCartOutlinedIcon fontSize="small" />
                 </Button>
                 </Box>
